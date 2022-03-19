@@ -1,0 +1,40 @@
+.bannerContainer {
+  width: 85%;
+  margin: 9% auto;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: row;
+}
+.banner1 {
+  width: 75%;
+  height: auto;
+  margin: 0% auto;
+  position: relative;
+  background-size: cover;
+}
+.banner1 img {
+  width: 94%;
+  border-radius: 5px;
+  opacity: 1;
+}
+.banner2 {
+  width: 30%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  margin: auto auto;
+}
+.banner2 img {
+  display: block;
+  width: 240px;
+  border-radius: 5px;
+  margin: 0px auto;
+}
+.banner_title {
+  position: absolute;
+  top: 100px;
+  left: 9%;
+  color: white;
+  font-size: 2rem;
+  z-index: 1;
+}
