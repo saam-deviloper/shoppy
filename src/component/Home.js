@@ -31,7 +31,7 @@ export default function Home() {
          <div className={Style.banner_title} >
            <h1 style={{color:'yellow',paddingLeft:'20px'}} >React.Js</h1>
            <p style={{color:'white',fontWeight:'700',fontSize:"2.5rem"}}>Simple SHOP with RestfulApi</p>
-           <p style={{color:'white',fontWeight:'700',fontSize:"2rem"}}>Visit Store for more info...</p>
+           <p style={{color:'white',fontWeight:'700',fontSize:"2rem"}}>Visit Shop section for more info...</p>
 
          </div>
        </div>
