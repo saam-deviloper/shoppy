@@ -40,7 +40,7 @@ export default function Home() {
        </div>
       </div>)
       }
-
+      {<hr/>}
       <Shittybutt onClick={HandleDisplay}>Modal with portal</Shittybutt>
       {/* <Button variant='success' className="w-25 mx-2" >Bootstrap butt</Button> */}
     </div>
