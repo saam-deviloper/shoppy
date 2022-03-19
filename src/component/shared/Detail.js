@@ -12,7 +12,7 @@ export default function Detail() {
     <>
       <div>
         <div className={Style.container}>
-          <img src={image} />
+          <img alt="logo" src={image} />
           <div className={Style.txtArea}>
             <h2>{title}</h2>
             <p>{description}</p>

@@ -23,14 +23,14 @@ export default function Product({ productData }) {
           <button className={Style.buttons}
             onClick={() => {
               dispatch({ type: "REMOVE_VALUE", payload: productData });
-            }}><img src="https://img.icons8.com/ios-glyphs/30/000000/trash--v3.png"/></button>
+            }}><img alt="logo" src="https://img.icons8.com/ios-glyphs/30/000000/trash--v3.png"/></button>
         }
         {quantityCount(state, id) > 1 &&
           <button className={Style.buttons}
             onClick={() => {
               dispatch({ type: "DECREASE", payload: productData });
             }}>
-              <img src="https://img.icons8.com/material-outlined/24/000000/minus.png"/>
+              <img alt="logo" src="https://img.icons8.com/material-outlined/24/000000/minus.png"/>
             </button>
         }
         {quantityCount(state, id)}
@@ -40,7 +40,7 @@ export default function Product({ productData }) {
               dispatch({ type: "INCREASE", payload: productData });
             }}
           >
-            <img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/000000/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"/>
+            <img alt="logo" src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/000000/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"/>
           </button>
         ) : (
           <button className={Style.buttons}
@@ -48,7 +48,7 @@ export default function Product({ productData }) {
               dispatch({ type: "ADD_VALUE", payload: productData });
             }}
           >
-          <img src="https://img.icons8.com/ios-glyphs/30/000000/buy--v1.png"/>
+          <img alt="logo" src="https://img.icons8.com/ios-glyphs/30/000000/buy--v1.png"/>
           </button>
         )}
       </div>

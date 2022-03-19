@@ -10,6 +10,7 @@ export default function Shop() {
     <>
       <div style={{margin:'8% 2% 0px 2%',display:'flex',flexDirection:'row',alignItems:'center'}}>
         <img
+          alt="logo"
           style={{width:'60px',height:'60px'}}
           // className={Style.breadImg}
           src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-menu-multimedia-kiranshastry-gradient-kiranshastry.png"

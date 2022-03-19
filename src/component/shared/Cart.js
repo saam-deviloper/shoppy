@@ -7,7 +7,7 @@ export default function Cart(props) {
   return (
     <>
       <div className={Style.container}>
-        <img src={image} className={Style.img} />
+        <img alt="logo" src={image} className={Style.img} />
         <div className={Style.txtContainer}>
           <h4>{title}</h4>
           <br />

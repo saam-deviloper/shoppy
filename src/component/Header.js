@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, NavLink, useMatch, useResolvedPath } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Style from "./Header.module.css";
 import LOGO from "../logo.svg";
 import { CartContext } from "../Context/CartContextProvider";
@@ -46,6 +46,7 @@ export default function Header() {
         <li className={Style.liCart}>
           <Link to={"/cart"}>
             <img
+              alt="logo"
               className={Style.cardImg}
               src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/64/000000/external-cart-supermarket-flatart-icons-lineal-color-flatarticons.png"
             />

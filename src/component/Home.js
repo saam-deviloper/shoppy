@@ -27,7 +27,7 @@ export default function Home() {
       ):
       (<div className={Style.bannerContainer}>
        <div className={Style.banner1}>
-         <img src={banner}  />
+         <img src={banner}  alt="banner"/>
          <div className={Style.banner_title} >
            <h1 style={{color:'yellow',paddingLeft:'20px'}} >React.Js</h1>
            <p style={{color:'white',fontWeight:'700',fontSize:"2.5rem"}}>Simple SHOP with RestfulApi</p>
@@ -36,7 +36,7 @@ export default function Home() {
          </div>
        </div>
        <div className={Style.banner2}>
-       <img src={banner2} />
+       <img src={banner2} alt="banner2"/>
        </div>
       </div>)
       }

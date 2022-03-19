@@ -46,7 +46,7 @@ export default function CartContextProvider({ children }) {
         };
       case "INCREASE":
         const IndexI = state.selectedItems.findIndex(
-          (item) => item.id == action.payload.id
+          (item) => item.id === action.payload.id
         );
         state.selectedItems[IndexI].quantity++;
         return {
@@ -55,7 +55,7 @@ export default function CartContextProvider({ children }) {
         };
       case "DECREASE":
         const IndexD = state.selectedItems.findIndex(
-          (item) => item.id == action.payload.id
+          (item) => item.id === action.payload.id
         );
         state.selectedItems[IndexD].quantity--;
         return {
