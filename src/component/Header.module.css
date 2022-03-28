@@ -5,8 +5,9 @@
 }
 .container{
     display: flex;
-    background-image: linear-gradient(to right, rgb(43, 64, 180) , rgb(57, 194, 228));
+    background-image: linear-gradient(to right, rgb(75, 75, 77) , rgba(57, 194, 228, 0.486));
     width: 100%;
+    height: 12%;
     padding: 1% 2%;
     box-shadow: 1px 3px 1px 0px rgba(104, 100, 100, 0.438);
     border-radius: 0px 0px 55px 55px;

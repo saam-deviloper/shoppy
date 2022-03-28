@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 //modal
 import BasicModal from "./BasicModal";
 //import styled button
@@ -8,10 +8,12 @@ import banner from "../component/assets/Images/banner.jpg";
 import banner2 from "../component/assets/Images/banner2.png";
 
 import Style from "./Home.module.css";
+import UserContextProvider, { UserContext } from "../Context/UserContextProvider";
 
 export default function Home() {
   const [isVisi, setIsVisi] = useState(false);
-
+  const data = useContext(UserContext);
+  //show modal
   const HandleDisplay = () => {
     setIsVisi((prevVisi) => !prevVisi);
   };
@@ -43,6 +45,7 @@ export default function Home() {
       {<hr/>}
       <Shittybutt onClick={HandleDisplay}>Modal with portal</Shittybutt>
       {/* <Button variant='success' className="w-25 mx-2" >Bootstrap butt</Button> */}
+      
     </div>
   );
 }

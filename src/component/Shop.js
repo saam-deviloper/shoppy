@@ -17,7 +17,7 @@ export default function Shop() {
         />
         <h2>Our newest products</h2>
         <div style={{position:"absolute",right:'6%',color:'dodgerblue',padding:'5px'}}>Category:/
-        <button className={Style.breadCrumb} active onClick={()=>{setCate('all')}}>All</button>/
+        <button className={Style.breadCrumb}  onClick={()=>{setCate('all')}}>All</button>/
         <button className={Style.breadCrumb} onClick={()=>{setCate("men's clothing")}}>Men's clothing</button>/
         <button className={Style.breadCrumb}  onClick={()=>{setCate("women's clothing")}}>women's clothing</button>/
         <button className={Style.breadCrumb} onClick={()=>{setCate("jewelery")}}>jewelery</button>/

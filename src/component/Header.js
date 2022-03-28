@@ -3,9 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import Style from "./Header.module.css";
 import LOGO from "../logo.svg";
 import { CartContext } from "../Context/CartContextProvider";
-export default function Header() {
-  const { state } = useContext(CartContext);
 
+export default function Header(props) {
+  // const {isLogged:true} = props;
+  const { state } = useContext(CartContext);
   return (
     <div className={Style.container}>
       <ul className={Style.list}>
@@ -24,7 +25,7 @@ export default function Header() {
               };
             }}
           >
-            Home
+            Home  
           </NavLink>
         </li>
         <li>
@@ -36,11 +37,27 @@ export default function Header() {
                 // margin: "1rem 0",
                 textDecoration: isActive ? "underline" : "",
                 color: isActive ? "white" : "black",
-
               };
             }}
           >
             Shop
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={"/signup"}
+            style={({ isActive }) => {
+              return {
+                display: "block",
+                // margin: "1rem 0",
+                textDecoration: isActive ? "underline" : "",
+                color: isActive ? "white" : "black",
+              };
+            }}
+          >
+            {console.log(props.isLogged)}
+            {props.isLogged ? props.username:'Signup/Login'}
+            {props.username}
           </NavLink>
         </li>
         <li className={Style.liCart}>
@@ -55,8 +72,8 @@ export default function Header() {
             )}
           </Link>
         </li>
-      
       </ul>
+     {/* <button onClick={()=>{console.log(user.email)}}>show</button> */}
     </div>
   );
 }
