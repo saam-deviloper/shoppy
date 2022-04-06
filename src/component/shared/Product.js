@@ -16,7 +16,7 @@ export default function Product({ productData }) {
       {productData.length > 0 ?<img src={image} className={Style.img} alt="img" />:
       <img src={image} className={Style.img} alt="Loading" />}
       <h3 className={Style.title}>{shortenTitle(title)}</h3>
-      <p>Cost: <span style={{color:'green',fontWeight:'600'}}>{price}$</span></p>
+      <p>Cost:<span style={{color:'green',fontWeight:'600'}}>{price}$</span></p>
       <div className={Style.butts}>
         <Link to={`/shop/${id}`}>detail</Link>
         {quantityCount(state, id) === 1 &&

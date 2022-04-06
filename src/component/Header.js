@@ -1,17 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Style from "./Header.module.css";
 import LOGO from "../logo.svg";
 import { CartContext } from "../Context/CartContextProvider";
 
-export default function Header(props) {
-  // const {isLogged:true} = props;
+export default function Header() {
+    // localStorage.setItem('username',JSON.stringify({cond:false,user:''}))
   const { state } = useContext(CartContext);
+  const [local,setLocal] = useState({cond:false,user:""});
+  
+  useEffect(()=>{
+    const getPerson = () =>{
+      setLocal(JSON.parse(localStorage.getItem('username')));
+    }
+    getPerson();
+  },[])
+  //logout handler
+  const logOutHandler = ()=>{
+    localStorage.setItem('username',JSON.stringify({cond:false,user:''}))
+    window.location.reload();
+  }
+  // console.log(local);
   return (
     <div className={Style.container}>
       <ul className={Style.list}>
         <li>
           <img className={Style.logo} src={LOGO} alt="logo" />
+        </li>
+        <li>
+          <h2>SHOPPY</h2>
         </li>
         <li>
           <NavLink
@@ -24,8 +41,9 @@ export default function Header(props) {
                 color: isActive ? "white" : "black",
               };
             }}
+            className={Style.navlink}
           >
-            Home  
+            Home
           </NavLink>
         </li>
         <li>
@@ -49,15 +67,45 @@ export default function Header(props) {
             style={({ isActive }) => {
               return {
                 display: "block",
+                textDecoration: isActive ? "underline" : "",
+                color: isActive ? "white" : "black",
+              };
+            }}
+            
+          >   
+          {local.user===''&& 'login'}
+          {local.user!==''&& local.user}
+          {/* {console.log(local)} */}
+          {/* {useEffect(()=>{
+           const showPerson=()=>{
+            console.log(local.cond)
+            if(local.cond)
+            return (local.user);
+            else
+            return ('login');
+           }
+           showPerson()
+          },[local])} */}
+          {/* {console.log(JSON.parse(localStorage.getItem('username')).cond)} */}
+          {/* first try run but need update */}
+          {/* {JSON.parse(localStorage.getItem('username')).cond ? 
+          JSON.parse(localStorage.getItem('username')).user
+          :'Login'} */}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={"/signup"}
+            style={({ isActive }) => {
+              return {
+                display: "block",
                 // margin: "1rem 0",
                 textDecoration: isActive ? "underline" : "",
                 color: isActive ? "white" : "black",
               };
             }}
           >
-            {console.log(props.isLogged)}
-            {props.isLogged ? props.username:'Signup/Login'}
-            {props.username}
+          {local.cond ? <p style={{color:'red'}} onClick={logOutHandler}>Logout</p>:''}
           </NavLink>
         </li>
         <li className={Style.liCart}>
@@ -65,7 +113,7 @@ export default function Header(props) {
             <img
               alt="logo"
               className={Style.cardImg}
-              src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/64/000000/external-cart-supermarket-flatart-icons-lineal-color-flatarticons.png"
+              src={'https://img.icons8.com/fluency/48/000000/shopping-cart-loaded.png'}
             />
             {state.totalCount >= 1 && (
               <span className={Style.spanCount}>{state.totalCount}</span>
@@ -73,7 +121,7 @@ export default function Header(props) {
           </Link>
         </li>
       </ul>
-     {/* <button onClick={()=>{console.log(user.email)}}>show</button> */}
+      {/* <button onClick={()=>{console.log(user.email)}}>show</button> */}
     </div>
   );
 }

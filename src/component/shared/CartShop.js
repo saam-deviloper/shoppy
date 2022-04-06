@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContextProvider";
 import Cart from "./Cart";
 import Style from "./ShopCart.module.css";
-export default function CartShop() {
+export default function CartShop(props) {
   const [cond,setCond] = useState(false)
   const { state,dispatch } = useContext(CartContext);
   return (

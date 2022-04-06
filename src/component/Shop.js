@@ -8,15 +8,15 @@ export default function Shop() {
   const selectedCategory = Products.filter( product =>  product.category === cate.toString());
   return (
     <>
-      <div style={{margin:'8% 2% 0px 2%',display:'flex',flexDirection:'row',alignItems:'center'}}>
+      <div className={Style.bread}>
         <img
           alt="logo"
           style={{width:'60px',height:'60px'}}
-          // className={Style.breadImg}
+          className={Style.breadImg}
           src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-menu-multimedia-kiranshastry-gradient-kiranshastry.png"
         />
-        <h2>Our newest products</h2>
-        <div style={{position:"absolute",right:'6%',color:'dodgerblue',padding:'5px'}}>Category:/
+        <h2 className={Style.titleBread}>Our newest products</h2>
+        <div style={{color:'dodgerblue',padding:'5px'}}>Category:
         <button className={Style.breadCrumb}  onClick={()=>{setCate('all')}}>All</button>/
         <button className={Style.breadCrumb} onClick={()=>{setCate("men's clothing")}}>Men's clothing</button>/
         <button className={Style.breadCrumb}  onClick={()=>{setCate("women's clothing")}}>women's clothing</button>/

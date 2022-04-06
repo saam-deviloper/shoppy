@@ -1,15 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Formik } from "formik";
 import Style from "./Signup.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { userContxtApi } from "../Context/UserContexProviderApi";
 import  {loginValidation}  from "../helper/loginValidation";
-import Header from "../component/Header";
+import CartShop from "./shared/CartShop";
+// import { useHistory } from 'react-router-dom';
 
 export default function LoginTest(props) {
-  const {data} = useContext(userContxtApi)
-  const [name,setName] = useState('Login')
+  const {data} = useContext(userContxtApi);
+  const navigate = useNavigate();
+  // const history = useHistory()
   return (
     <>
       <Formik
@@ -29,10 +31,14 @@ export default function LoginTest(props) {
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             alert(JSON.stringify(loginValidation(values,data)));
-            // loginValidation(values,data);
+            if(loginValidation(values,data))
+            {
+              localStorage.setItem('username',JSON.stringify({cond:true,user:values.UserName}));
+              navigate('/');
+              window.location.reload();
+            }
             setSubmitting(false);
           }, 400);
-            <Header isLogged={loginValidation(values,data)} username={values.UserName}/>
         }}
       >
         {(formik) => (
