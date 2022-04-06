@@ -71,8 +71,8 @@ export default function Header() {
             
           >   
               
-//           { local.user === " " && "login" }
-//           { local.user !== " " && local.user }
+          { local.user === " " && "login" }
+          { local.user !== " " && {local.user} }
           {/* {console.log(local)} */}
           {/* {useEffect(()=>{
            const showPerson=()=>{
