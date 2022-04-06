@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik } from "formik";
 import Style from "./Signup.module.css";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import UserContext from "../Context/UserContextProvider";
 
 export default function SignUpTest() {
-//   const [user, setUser] = useState([]);
+  //   const [user, setUser] = useState([]);
   return (
     <>
       <Formik
@@ -41,7 +40,7 @@ export default function SignUpTest() {
             values.id++;
             alert(JSON.stringify(values, null, 2));
             // setUser(values);
-            localStorage.setItem('user',JSON.stringify(values));
+            localStorage.setItem("user", JSON.stringify(values));
             setSubmitting(false);
           }, 400);
         }}

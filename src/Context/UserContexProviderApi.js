@@ -11,7 +11,7 @@ export default function UserContexProviderApi({ children }) {
     };
     getPeople();
   }, []);
-  return <userContxtApi.Provider value={data}>
-  {children}
-  </userContxtApi.Provider>;
+  return (
+    <userContxtApi.Provider value={data}>{children}</userContxtApi.Provider>
+  );
 }

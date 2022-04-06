@@ -10,11 +10,14 @@ export default function CartContextProvider({ children }) {
     isCheckOut: false,
   };
   //get sum of order and total price
-  const sumCount = items => {
-    const totalCount = items.reduce((total, product) => total + product.quantity,0);
+  const sumCount = (items) => {
+    const totalCount = items.reduce(
+      (total, product) => total + product.quantity,
+      0
+    );
     const totalPrice = items
-      .reduce((total, product) => total + product.price * product.quantity,0)
-      .toFixed(2)
+      .reduce((total, product) => total + product.price * product.quantity, 0)
+      .toFixed(2);
     // console.log(totalCount, totalPrice);
     return { totalCount, totalPrice };
   };
@@ -33,7 +36,6 @@ export default function CartContextProvider({ children }) {
           selectedItems: [...state.selectedItems],
           ...sumCount(state.selectedItems),
           isCheckOut: false,
-
         };
       case "REMOVE_VALUE":
         const newSelectedItems = state.selectedItems.filter(

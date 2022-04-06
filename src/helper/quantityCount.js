@@ -1,9 +1,10 @@
 export const quantityCount = (state, prodId) => {
-  const indexSelected = state.selectedItems.findIndex(item => item.id === prodId);
+  const indexSelected = state.selectedItems.findIndex(
+    (item) => item.id === prodId
+  );
   if (indexSelected === -1) {
     return false;
-  } 
-  else {
+  } else {
     return state.selectedItems[indexSelected].quantity;
   }
 };

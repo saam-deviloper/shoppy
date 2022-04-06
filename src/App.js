@@ -8,7 +8,7 @@ import CartContextProvider from "./Context/CartContextProvider";
 import ProductContextProvider from "./Context/ProductContextProvider";
 import UserContexProviderApi from "./Context/UserContexProviderApi";
 import LoginTest from "./component/LoginTest";
-import SignUpTest from './component/SignUpTest'
+import SignUpTest from "./component/SignUpTest";
 function App() {
   return (
     <>
