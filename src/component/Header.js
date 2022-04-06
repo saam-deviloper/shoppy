@@ -71,23 +71,7 @@ export default function Header() {
             
           >   
           {local.user === '' && 'login'}
-          {local.user!== '' && local.user}
-          {/* {console.log(local)} */}
-          {/* {useEffect(()=>{
-           const showPerson=()=>{
-            console.log(local.cond)
-            if(local.cond)
-            return (local.user);
-            else
-            return ('login');
-           }
-           showPerson()
-          },[local])} */}
-          {/* {console.log(JSON.parse(localStorage.getItem('username')).cond)} */}
-          {/* first try run but need update */}
-          {/* {JSON.parse(localStorage.getItem('username')).cond ? 
-          JSON.parse(localStorage.getItem('username')).user
-          :'Login'} */}
+          {local.user !== '' && local.user}
           </NavLink>
         </li>
         <li>
