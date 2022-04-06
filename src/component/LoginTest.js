@@ -9,7 +9,6 @@ import { loginValidation } from "../helper/loginValidation";
 export default function LoginTest(props) {
   const { data } = useContext(userContxtApi);
   const navigate = useNavigate();
-  // const history = useHistory()
   return (
     <>
       <Formik
@@ -58,7 +57,6 @@ export default function LoginTest(props) {
                 <div style={{ height: "30px" }}>
                   {formik.errors.UserName && formik.touched.UserName ? (
                     <span style={{ color: "red" }}>
-                      {" "}
                       *{formik.errors.UserName}
                     </span>
                   ) : null}

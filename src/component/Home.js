@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   const [isVisi, setIsVisi] = useState(false);
-  // const data = useContext(UserContext);
   //show modal
   const HandleDisplay = () => {
     setIsVisi((prevVisi) => !prevVisi);
@@ -36,13 +35,13 @@ export default function Home() {
                 </h1>
                 <p style={{ color: "white" }}>Simple SHOP with RestfulApi</p>
                 <p style={{ color: "white" }}>
-                  Visit{" "}
+                  Visit
                   <Link
                     to={"/shop"}
                     style={{ color: "yellow", textDecoration: "none" }}
                   >
                     Shop
-                  </Link>{" "}
+                  </Link>
                   section for more info...
                 </p>
               </div>

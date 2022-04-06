@@ -17,5 +17,5 @@ export default function ProductContextProvider({ children }) {
     <ProductContext.Provider value={products}>
       {children}
     </ProductContext.Provider>
-  );
+  )
 }

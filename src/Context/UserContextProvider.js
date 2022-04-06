@@ -10,7 +10,9 @@ export default function UserContextProvider({ children }) {
   }, []);
   return (
     <>
-      <UserContext.Provider value={data}>{children}</UserContext.Provider>
+      <UserContext.Provider value={data}>
+      {children}
+      </UserContext.Provider>
     </>
   );
 }

@@ -4,4 +4,4 @@ export const loginValidation = (userValue, serverValue) => {
   );
   if (serverValue[userIndex]["password"] === userValue.passWord) return true;
   else return false;
-};
+}

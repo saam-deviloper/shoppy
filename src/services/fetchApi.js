@@ -7,4 +7,4 @@ export const fetchApi = async () => {
     .get(`${BASE_URL}/products`)
     .catch((err) => console.log(err));
   return response.data;
-};
+}

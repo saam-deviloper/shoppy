@@ -20,7 +20,6 @@ export default function Header() {
     localStorage.setItem('username',JSON.stringify({cond:false,user:''}))
     window.location.reload();
   }
-  // console.log(local);
   return (
     <div className={Style.container}>
       <ul className={Style.list}>
@@ -36,7 +35,6 @@ export default function Header() {
             style={({ isActive }) => {
               return {
                 display: "block",
-                // margin: "1rem 0",
                 textDecoration: isActive ? "underline" : "",
                 color: isActive ? "white" : "black",
               };
@@ -52,7 +50,6 @@ export default function Header() {
             style={({ isActive }) => {
               return {
                 display: "block",
-                // margin: "1rem 0",
                 textDecoration: isActive ? "underline" : "",
                 color: isActive ? "white" : "black",
               };
@@ -73,8 +70,8 @@ export default function Header() {
             }}
             
           >   
-          {local.user===''&& 'login'}
-          {local.user!==''&& local.user}
+          {local.user === '' && 'login'}
+          {local.user!== '' && local.user}
           {/* {console.log(local)} */}
           {/* {useEffect(()=>{
            const showPerson=()=>{
@@ -99,7 +96,6 @@ export default function Header() {
             style={({ isActive }) => {
               return {
                 display: "block",
-                // margin: "1rem 0",
                 textDecoration: isActive ? "underline" : "",
                 color: isActive ? "white" : "black",
               };
@@ -121,7 +117,6 @@ export default function Header() {
           </Link>
         </li>
       </ul>
-      {/* <button onClick={()=>{console.log(user.email)}}>show</button> */}
     </div>
   );
 }

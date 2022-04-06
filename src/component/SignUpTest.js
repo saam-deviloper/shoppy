@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import * as Yup from "yup";
 
 export default function SignUpTest() {
-  //   const [user, setUser] = useState([]);
   return (
     <>
       <Formik
@@ -39,7 +38,6 @@ export default function SignUpTest() {
           setTimeout(() => {
             values.id++;
             alert(JSON.stringify(values, null, 2));
-            // setUser(values);
             localStorage.setItem("user", JSON.stringify(values));
             setSubmitting(false);
           }, 400);
@@ -61,7 +59,6 @@ export default function SignUpTest() {
                 <div style={{ height: "30px" }}>
                   {formik.errors.firstName && formik.touched.firstName ? (
                     <span style={{ color: "red" }}>
-                      {" "}
                       *{formik.errors.firstName}
                     </span>
                   ) : null}
@@ -77,7 +74,6 @@ export default function SignUpTest() {
                 <div style={{ height: "30px" }}>
                   {formik.errors.lastName && formik.touched.lastName ? (
                     <span style={{ color: "red" }}>
-                      {" "}
                       *{formik.errors.lastName}
                     </span>
                   ) : null}
@@ -93,7 +89,6 @@ export default function SignUpTest() {
                 <div style={{ height: "30px" }}>
                   {formik.errors.email && formik.touched.email ? (
                     <span style={{ color: "red" }}>
-                      {" "}
                       *{formik.errors.email}
                     </span>
                   ) : null}
@@ -124,7 +119,6 @@ export default function SignUpTest() {
                 <div style={{ height: "30px" }}>
                   {formik.errors.rePass && formik.touched.rePass ? (
                     <span style={{ color: "red" }}>
-                      {" "}
                       *{formik.errors.rePass}
                     </span>
                   ) : null}

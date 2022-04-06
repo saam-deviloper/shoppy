@@ -18,7 +18,6 @@ export default function CartContextProvider({ children }) {
     const totalPrice = items
       .reduce((total, product) => total + product.price * product.quantity, 0)
       .toFixed(2);
-    // console.log(totalCount, totalPrice);
     return { totalCount, totalPrice };
   };
 

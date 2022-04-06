@@ -7,4 +7,4 @@ export const quantityCount = (state, prodId) => {
   } else {
     return state.selectedItems[indexSelected].quantity;
   }
-};
+}
