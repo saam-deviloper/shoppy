@@ -58,7 +58,7 @@ export default function Header() {
             Shop
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink
             to={"/signup"}
             style={({ isActive }) => {
@@ -71,7 +71,7 @@ export default function Header() {
           >
             {local.user ? <p>local.user</p> : <p>login</p>}
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink
             to={"/signup"}
