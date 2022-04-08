@@ -5,21 +5,21 @@ import LOGO from "../logo.svg";
 import { CartContext } from "../Context/CartContextProvider";
 
 export default function Header() {
-    // localStorage.setItem('username',JSON.stringify({cond:false,user:''}))
+  // localStorage.setItem('username',JSON.stringify({cond:false,user:''}))
   const { state } = useContext(CartContext);
-  const [local,setLocal] = useState({cond:false,user:""});
-  
-  useEffect(()=>{
-    const getPerson = () =>{
-      setLocal(JSON.parse(localStorage.getItem('username')));
-    }
+  const [local, setLocal] = useState({ cond: false, user: "" });
+
+  useEffect(() => {
+    const getPerson = () => {
+      setLocal(JSON.parse(localStorage.getItem("username")));
+    };
     getPerson();
-  },[])
+  }, []);
   //logout handler
-  const logOutHandler = ()=>{
-    localStorage.setItem('username',JSON.stringify({cond:false,user:''}))
+  const logOutHandler = () => {
+    localStorage.setItem("username", JSON.stringify({ cond: false, user: "" }));
     window.location.reload();
-  }
+  };
   return (
     <div className={Style.container}>
       <ul className={Style.list}>
@@ -63,14 +63,13 @@ export default function Header() {
             to={"/signup"}
             style={({ isActive }) => {
               return {
-                display: "block",
-                textDecoration: isActive ? "underline" : "",
+                // display: "block",
+                // textDecoration: isActive ? "underline" : "",
                 color: isActive ? "white" : "black",
               };
             }}
-            
-          >   
-          {local.user ? <p>local.user</p> : <p>login</p> }
+          >
+            {local.user ? <p>local.user</p> : <p>login</p>}
           </NavLink>
         </li>
         <li>
@@ -84,7 +83,13 @@ export default function Header() {
               };
             }}
           >
-          {local.cond ? <p style={{color:'red'}} onClick={logOutHandler}>Logout</p>:''}
+            {local.cond ? (
+              <p style={{ color: "red" }} onClick={logOutHandler}>
+                Logout
+              </p>
+            ) : (
+              ""
+            )}
           </NavLink>
         </li>
         <li className={Style.liCart}>
@@ -92,7 +97,9 @@ export default function Header() {
             <img
               alt="logo"
               className={Style.cardImg}
-              src={'https://img.icons8.com/fluency/48/000000/shopping-cart-loaded.png'}
+              src={
+                "https://img.icons8.com/fluency/48/000000/shopping-cart-loaded.png"
+              }
             />
             {state.totalCount >= 1 && (
               <span className={Style.spanCount}>{state.totalCount}</span>
