@@ -70,8 +70,7 @@ export default function Header() {
             }}
             
           >   
-          {local.user === '' && 'login'}
-          {local.user !== '' && local.user}
+          {local.user ? local.user : 'login'}
           </NavLink>
         </li>
         <li>
