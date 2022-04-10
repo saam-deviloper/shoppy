@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Style from "./Header.module.css";
 import LOGO from "../logo.svg";
@@ -7,19 +7,19 @@ import { CartContext } from "../Context/CartContextProvider";
 export default function Header() {
   // localStorage.setItem('username',JSON.stringify({cond:false,user:''}))
   const { state } = useContext(CartContext);
-  const [local, setLocal] = useState({ cond: false, user: "" });
+  // const [local, setLocal] = useState({ cond: false, user: " " });
 
-  useEffect(() => {
-    const getPerson = () => {
-      setLocal(JSON.parse(localStorage.getItem("username")));
-    };
-    getPerson();
-  }, []);
+  // useEffect(() => {
+  //   const getPerson = () => {
+  //     setLocal(JSON.parse(localStorage.getItem("username")));
+  //   };
+  //   getPerson();
+  // }, []);
   //logout handler
-  const logOutHandler = () => {
-    localStorage.setItem("username", JSON.stringify({ cond: false, user: "" }));
-    window.location.reload();
-  };
+  // const logOutHandler = () => {
+  //   localStorage.setItem("username", JSON.stringify({ cond: false, user: " " }));
+  //   window.location.reload();
+  // };
   return (
     <>
       <div className={Style.container}>
@@ -70,10 +70,11 @@ export default function Header() {
                 };
               }}
             >
-              {local.user ? local.user : 'login'}
+              Login
+              {/* {local.user ? local.user : 'login'} */}
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               to={"/signup"}
               style={({ isActive }) => {
@@ -92,7 +93,7 @@ export default function Header() {
                 ""
               )}
             </NavLink>
-          </li>
+          </li> */}
           <li className={Style.liCart}>
             <Link to={"/cart"}>
               <img
