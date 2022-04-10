@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Formik } from "formik";
 import Style from "./Signup.module.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ import { loginValidation } from "../helper/loginValidation";
 
 export default function LoginTest(props) {
   const { data } = useContext(userContxtApi);
+  const [disable, setdisable] = useState(false);
   const navigate = useNavigate();
   return (
     <>
@@ -78,8 +79,15 @@ export default function LoginTest(props) {
                     </span>
                   ) : null}
                 </div>
-                <button className={Style.btn} type="submit">
-                  {props.btnName ? props.name : "Login"}
+                <button
+                  className={Style.btn}
+                  type="submit"
+                  disabled={disable}
+                >
+                  {JSON.parse(localStorage.getItem("username")).cond
+                    ? setdisable(true)
+                    : "Login"}
+                  {JSON.parse(localStorage.getItem("username")).cond && "Logged in"}
                 </button>
                 <Link to={"/signup"}>Signup</Link>
               </form>
